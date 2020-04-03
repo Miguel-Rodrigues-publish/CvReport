@@ -22,9 +22,9 @@ Os dados apresentados são actualizados automáticamente quando existem modifica
 | OMS        | ECDC           |
 | ------------- |:-------------:|
 |**Ultímo**                           ||
-| [Último](./report/oms/report-OMS-pt-splited-20200402.html) | [Último](./report/oms/report-ECDC-pt-splited-20200402.html)  |
+| [Último](./report/oms/report-OMS-pt-splited-20200402.html) | [Último](./report/ecdc/report-ECDC-pt-splited-20200402.html)  |
 |**Abril**                            ||
-|[02](./report/oms/report-OMS-pt-splited-20200402.html) | [02](./report/oms/report-ECDC-pt-splited-20200402.html)  |
+|[02](./report/oms/report-OMS-pt-splited-20200402.html) | [02](./report/ecdc/report-ECDC-pt-splited-20200402.html)  |
 |[01](./report/oms/report-pt-20200401.html)       ||
 |**Março**                            ||
 |[31](./report/oms/report-pt-20200331.html)      ||

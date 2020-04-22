@@ -1,0 +1,49 @@
+---
+title: "Covid19"
+author: "Miguel Rodrigues (miguel.b.rodrigues@gmail.com)"
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 10pt
+
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    fig_width: 6
+    fig_height: 3.5
+    theme: readable
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(readr)
+```
+
+```{r message=FALSE, warning=FALSE, results = FALSE}
+#
+# import
+library(ggplot2)
+library(reshape2)
+library(dplyr)
+library(plotly)
+library(viridis)
+library(knitr)
+
+ecdc_flist <-list.files(path = "../WHO-site/report/presentation")
+Link <- c()
+Data <- c()
+presentation <- c()
+for (i in 1:length(ecdc_flist)){
+  Link[i] <- sprintf("./%s/%s", "report/presentation", ecdc_flist[i])
+  #Data[i] <- substr(ecdc_flist[i], start=27,stop =36)
+  Data[i] <- substr(ecdc_flist[i], start=1,stop =80)
+  presentation[length(ecdc_flist)+1-i] <-  sprintf ("[%s](%s)", Data[i], Link[i])
+}
+
+```
+
+
+### AESE Presentation 2020 04 24
+```{r  message=FALSE}
+kable(  data.frame(presentation), row.names = FALSE)
+```

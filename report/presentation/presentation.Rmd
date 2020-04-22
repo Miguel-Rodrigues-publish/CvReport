@@ -29,15 +29,20 @@ library(plotly)
 library(viridis)
 library(knitr)
 
-ecdc_flist <-list.files(path = "../WHO-site/report/presentation")
+ecdc_flist <-list.files(path = "./")
 Link <- c()
 Data <- c()
 presentation <- c()
+ignore <- 0
 for (i in 1:length(ecdc_flist)){
-  Link[i] <- sprintf("./%s/%s", "report/presentation", ecdc_flist[i])
-  #Data[i] <- substr(ecdc_flist[i], start=27,stop =36)
-  Data[i] <- substr(ecdc_flist[i], start=1,stop =80)
-  presentation[length(ecdc_flist)+1-i] <-  sprintf ("[%s](%s)", Data[i], Link[i])
+  x <- ecdc_flist[i]
+  if ( substr(x, nchar(x) - 15 + 1 , nchar(x)-11) == "2020" ) {
+    Link[i] <- ecdc_flist[i]
+    Data[i] <- substr(ecdc_flist[i], start=1,stop =80)
+    presentation[length(ecdc_flist)+1-i - ignore] <-  sprintf ("[%s](%s)", Data[i], Link[i])
+  } else {
+    ignore <- ignore + 1
+  }
 }
 
 ```
